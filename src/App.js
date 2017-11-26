@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Nav from './components/Nav';
 import Header from './components/Header';
+import Pager from './components/Pager';
 
 class App extends Component {
     render() {
@@ -70,10 +71,8 @@ class App extends Component {
                                     on July 8, 2017</p>
                             </div>
                             <hr/>
-                            {/*Pager*/}
-                            <div className="clearfix">
-                                <a className="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-                            </div>
+
+                            <Pager/>
                         </div>
                     </div>
                 </div>
