@@ -1,11 +1,41 @@
 {
   "name": "my_readable",
+  "title": "Readable",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "description": "Simple weblog povered by React, Redux, and Bootstrap",
+  "author": "Navid Kalaei <navidkalaei [at] gmail [dot] com>",
+  "keywords": [
+    "css",
+    "sass",
+    "html",
+    "responsive",
+    "theme",
+    "template",
+    "react",
+    "redux"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/navid-kalaei/readable.git"
+  },
   "dependencies": {
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "bootstrap": "^4.0.0-beta.2",
+    "font-awesome": "4.7.0",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "browser-sync": "2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "3.9.0",
+    "gulp-header": "1.8.9",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
