@@ -1,10 +1,18 @@
 import React, {Component} from 'react';
+//import Script from 'react-load-script';
 import Nav from './components/Nav';
 import Header from './components/Header';
 import Pager from './components/Pager';
 import Footer from './components/Footer';
 
 class App extends Component {
+
+    scriptSources = [
+        './vendor/jquery/jquery.min.js',
+        './vendor/bootstrap/js/bootstrap.bundle.min.js',
+        './js/clean-blog.min.js'
+    ];
+
     render() {
         return (
             <div>
@@ -81,6 +89,19 @@ class App extends Component {
                 <hr/>
 
                 <Footer/>
+
+                {/*{this.scriptSources.map((src) => (*/}
+                    {/*<Script*/}
+                        {/*url={src}*/}
+                    {/*/>*/}
+                {/*))}*/}
+
+                {/*/!*Bootstrap core JavaScript*!/*/}
+                {/*<script src="./vendor/jquery/jquery.min.js"></script>*/}
+                {/*<script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>*/}
+
+                {/*/!*Custom scripts for this template*!/*/}
+                {/*<script src="./js/clean-blog.min.js"></script>*/}
             </div>
         );
     }
