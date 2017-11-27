@@ -23,8 +23,6 @@ class App extends Component {
                             <PostPreview/>
                             <PostPreview/>
 
-                            <Pager/>
-
                         </div>
                     </div>
                 </div>
