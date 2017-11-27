@@ -1,4 +1,6 @@
 import React from 'react';
+import ThumpUpIcon from 'react-icons/lib/md/thumb-up'
+import ThumpDownIcon from 'react-icons/lib/md/thumb-down'
 
 export default () => (
     <div>
@@ -18,7 +20,7 @@ export default () => (
                 <br/>
                 <div className="d-flex justify-content-between">
                     <div>comments (15)</div>
-                    <div>like</div>
+                    <div><ThumpDownIcon/> like <ThumpUpIcon/></div>
                 </div>
                 <span className="badge badge-pill badge-dark">navid</span>
                 <span className="badge badge-pill badge-dark">navid</span>
