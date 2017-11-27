@@ -1,17 +1,10 @@
 import React, {Component} from 'react';
-//import Script from 'react-load-script';
 import Nav from './components/Nav';
 import Header from './components/Header';
 import Pager from './components/Pager';
 import Footer from './components/Footer';
 
 class App extends Component {
-
-    scriptSources = [
-        './vendor/jquery/jquery.min.js',
-        './vendor/bootstrap/js/bootstrap.bundle.min.js',
-        './js/clean-blog.min.js'
-    ];
 
     render() {
         return (
@@ -33,9 +26,10 @@ class App extends Component {
                                         Problems look mighty small from 150 miles up
                                     </h3>
                                 </a>
-                                <p className="post-meta">Posted by
-                                    <a href="#">Start Bootstrap</a>
-                                    on September 24, 2017</p>
+                                <p className="post-meta">Posted by{' '}
+                                    <a href="#">Start Bootstrap</a>{' '}
+                                    on September 24, 2017
+                                </p>
                             </div>
                             <hr/>
                             <div className="post-preview">
@@ -45,8 +39,8 @@ class App extends Component {
                                         waste any of mine.
                                     </h2>
                                 </a>
-                                <p className="post-meta">Posted by
-                                    <a href="#">Start Bootstrap</a>
+                                <p className="post-meta">Posted by{' '}
+                                    <a href="#">Start Bootstrap</a>{' '}
                                     on September 18, 2017</p>
                             </div>
                             <hr/>
@@ -60,8 +54,8 @@ class App extends Component {
                                         next ten.
                                     </h3>
                                 </a>
-                                <p className="post-meta">Posted by
-                                    <a href="#">Start Bootstrap</a>
+                                <p className="post-meta">Posted by{' '}
+                                    <a href="#">Start Bootstrap</a>{' '}
                                     on August 24, 2017</p>
                             </div>
                             <hr/>
@@ -75,8 +69,8 @@ class App extends Component {
                                         duty to future generations.
                                     </h3>
                                 </a>
-                                <p className="post-meta">Posted by
-                                    <a href="#">Start Bootstrap</a>
+                                <p className="post-meta">Posted by{' '}
+                                    <a href="#">Start Bootstrap</a>{' '}
                                     on July 8, 2017</p>
                             </div>
                             <hr/>
@@ -90,18 +84,6 @@ class App extends Component {
 
                 <Footer/>
 
-                {/*{this.scriptSources.map((src) => (*/}
-                    {/*<Script*/}
-                        {/*url={src}*/}
-                    {/*/>*/}
-                {/*))}*/}
-
-                {/*/!*Bootstrap core JavaScript*!/*/}
-                {/*<script src="./vendor/jquery/jquery.min.js"></script>*/}
-                {/*<script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>*/}
-
-                {/*/!*Custom scripts for this template*!/*/}
-                {/*<script src="./js/clean-blog.min.js"></script>*/}
             </div>
         );
     }
