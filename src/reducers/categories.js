@@ -9,10 +9,7 @@ export default (state = initialState, action) => {
 
     switch (action.type) {
         case FETCH_CATEGORIES: {
-            return {
-                ...state,
-                ...action.categories
-            }
+            return [...action.categories]
         }
         default: {
             return state;
