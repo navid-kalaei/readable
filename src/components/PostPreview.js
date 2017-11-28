@@ -14,7 +14,7 @@ export default () => (
                 </h3>
             </a>
             <p className="post-meta">Posted by{' '}
-                <a href="#">Start Bootstrap</a>{' '}
+                <a href="https://getbootstrap.com/">Start Bootstrap</a>{' '}
                 on September 24, 2017
                 <br/>
                 <br/>
