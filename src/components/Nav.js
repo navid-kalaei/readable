@@ -11,7 +11,7 @@ export default () => (
                 <i className="fa fa-bars"></i>
             </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
-                <ul className="navbar-nav ml-auto">
+                <ul className="navbar-nav ml-auto flex-row-reverse">
                     <li className="nav-item">
                         <a className="nav-link" href="index.html">Home</a>
                     </li>
@@ -22,7 +22,7 @@ export default () => (
                         <a className="nav-link" href="post.html">Sample Post</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="contact.html">Contact</a>
+                        <a className="nav-link" href="post.html">Add Post</a>
                     </li>
                 </ul>
             </div>
