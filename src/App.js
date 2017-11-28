@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Nav from './components/Nav';
 import Header from './components/Header';
-import Pager from './components/Pager';
 import Footer from './components/Footer';
 import PostPreview from './components/PostPreview';
 
