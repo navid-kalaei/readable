@@ -1,7 +1,9 @@
-import {FETCH_CATEGORIES} from "../actions/categories";
+import { FETCH_CATEGORIES } from "../actions/categories";
 
 
-const initialState = {};
+const initialState = {
+    categories: null
+};
 
 export default (state = initialState, action) => {
 
@@ -9,7 +11,7 @@ export default (state = initialState, action) => {
         case FETCH_CATEGORIES: {
             return {
                 ...state,
-                categories: action.categories
+                ...action.categories
             }
         }
         default: {
