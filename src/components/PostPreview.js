@@ -18,10 +18,10 @@ export default () => (
                 on September 24, 2017
                 <br/>
                 <br/>
-                <div className="d-flex justify-content-between">
-                    <div>comments (15)</div>
-                    <div><ThumpDownIcon/> like <ThumpUpIcon/></div>
-                </div>
+                <span className="d-flex justify-content-between">
+                    <span>comments (15)</span>
+                    <span><ThumpDownIcon/> like <ThumpUpIcon/></span>
+                </span>
                 <span className="badge badge-pill badge-dark">navid</span>
                 <span className="badge badge-pill badge-dark">navid</span>
                 <span className="badge badge-pill badge-dark">navid</span>
