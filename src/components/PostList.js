@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PostPreview from './PostPreview';
-import { fetchPosts } from "../actions/posts";
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import {fetchPosts} from "../actions/posts";
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
 class PostList extends Component {
 
@@ -11,11 +11,18 @@ class PostList extends Component {
     }
 
     render() {
+
+        const { posts } = this.props || [];
+ ;
         return (
             <div>
-                <PostPreview/>
-                <PostPreview/>
-                <PostPreview/>
+                {/*<PostPreview/>*/}
+                {posts && Array.isArray(posts) && posts.map((post) => (
+                    <PostPreview
+                        key={post.id}
+                        props={post}
+                    />
+                ))}
             </div>
         );
     }
