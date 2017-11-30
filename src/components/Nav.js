@@ -25,7 +25,7 @@ class Nav extends Component {
                             </li>
                             {categories && Array.isArray(categories) && categories.map((category) => (
                                 <li key={category.path} className="nav-item">
-                                    <a className="nav-link" href={category.path}>{category.name}</a>
+                                    <NavLink className="nav-link" to={category.path}>{category.name}</NavLink>
                                 </li>
                             ))}
 

@@ -6,14 +6,23 @@ import {bindActionCreators} from 'redux';
 
 class PostList extends Component {
 
+    fetchCategoryPosts(props = this.props) {
+        this.props.fetchPosts(props.category);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.category !== this.props.category) {
+            this.fetchCategoryPosts(nextProps);
+        }
+    }
     componentWillMount() {
-        this.props.fetchPosts();
+        this.fetchCategoryPosts();
     }
 
     render() {
 
         const { posts } = this.props || [];
- ;
+
         return (
             <div>
                 {posts && Array.isArray(posts) && posts.map((post) => (
