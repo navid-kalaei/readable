@@ -21,7 +21,7 @@ export default ({ props }) => (
                 <br/>
                 <span className="d-flex justify-content-between">
                     <span>comments ({props.commentCount})</span>
-                    <span><ThumpDownIcon/> like <ThumpUpIcon/></span>
+                    <span><ThumpDownIcon/> {props.voteScore} <ThumpUpIcon/></span>
                 </span>
                 <span className="badge badge-pill badge-dark">{props.category}</span>
                 <br/>
