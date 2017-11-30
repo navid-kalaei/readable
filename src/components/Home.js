@@ -12,8 +12,6 @@ class Home extends Component {
                         <PostPreview/>
                         <PostPreview/>
                         <PostPreview/>
-                        <PostPreview/>
-                        <PostPreview/>
                     </div>
                 </div>
             </div>
