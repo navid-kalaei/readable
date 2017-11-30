@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'react-moment';
 import ThumpUpIcon from 'react-icons/lib/md/thumb-up'
 import ThumpDownIcon from 'react-icons/lib/md/thumb-down'
 
@@ -15,7 +16,7 @@ export default ({ props }) => (
             </a>
             <p className="post-meta">Posted by{' '}
                 <a href="https://getbootstrap.com/">{props.author}</a>{' '}
-                on {props.timestamp}
+                on <Moment format="MMM Do YY">{props.timestamp}</Moment>
                 <br/>
                 <br/>
                 <span className="d-flex justify-content-between">
