@@ -8,11 +8,11 @@ import ThumpDownIcon from 'react-icons/lib/md/thumb-down'
 
 class PostPreview extends Component {
 
-    upVote = () => (this.props.votePost({id:this.props.post.id, vote:1}));
-    downVote = () => (this.props.votePost({id:this.props.post.id, vote:-1}));
+    upVote = () => (this.props.votePost({id: this.props.post.id, vote: 1}));
+    downVote = () => (this.props.votePost({id: this.props.post.id, vote: -1}));
 
     render() {
-        const { title, body, author, category, timestamp, voteScore, commentCount } = this.props.post;
+        const {title, body, author, category, timestamp, voteScore, commentCount} = this.props.post;
 
         return (
             <div>
@@ -25,7 +25,7 @@ class PostPreview extends Component {
                             {body}
                         </h3>
                     </a>
-                    <p className="post-meta">Posted by{' '}
+                    <div className="post-meta">Posted by{' '}
                         <span className="font-weight-bold font-italic">{author}</span>{' '}
                         on <span className="font-italic"><Moment format="MMM Do YYYY">{timestamp}</Moment></span>
                         <br/>
@@ -33,12 +33,16 @@ class PostPreview extends Component {
                         <span className="d-flex justify-content-between">
                     <span>comments ({commentCount})</span>
                     <span>
-                        <ThumpDownIcon onClick={this.downVote}/> {voteScore} <ThumpUpIcon onClick={this.upVote}/>
+                        <span style={{marginRight: "15px"}}>
+                            <ThumpDownIcon onClick={this.downVote}/> {voteScore} <ThumpUpIcon onClick={this.upVote}/>
+                        </span>
+                        <button className="btn-sm btn-primary">EDIT</button>
+                        <button className="btn-sm btn-danger">Remove</button>
                     </span>
                 </span>
                         <span className="badge badge-pill badge-dark">{category}</span>
                         <br/>
-                    </p>
+                    </div>
                 </div>
                 <hr/>
             </div>
