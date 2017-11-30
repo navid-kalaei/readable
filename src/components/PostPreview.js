@@ -15,8 +15,8 @@ export default ({ props }) => (
                 </h3>
             </a>
             <p className="post-meta">Posted by{' '}
-                <a href="https://getbootstrap.com/">{props.author}</a>{' '}
-                on <Moment format="MMM Do YY">{props.timestamp}</Moment>
+                <span className="font-weight-bold font-italic">{props.author}</span>{' '}
+                on <span className="font-italic"><Moment format="MMM Do YYYY">{props.timestamp}</Moment></span>
                 <br/>
                 <br/>
                 <span className="d-flex justify-content-between">
