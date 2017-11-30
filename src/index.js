@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import {BrowserRouter} from 'react-router-dom';
+import {Provider} from 'react-redux';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './vendor/bootstrap/css/bootstrap.min.css';
@@ -11,8 +12,10 @@ import './css/clean-blog.min.css';
 import store from "./config/store";
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App/>
-    </Provider>
+    <BrowserRouter>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </BrowserRouter>
     , document.getElementById('root'));
 registerServiceWorker();
