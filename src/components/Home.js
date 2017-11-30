@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PostPreview from './PostPreview';
+import PostList from './PostList';
 
 class Home extends Component {
 
@@ -9,9 +9,7 @@ class Home extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8 col-md-10 mx-auto">
-                        <PostPreview/>
-                        <PostPreview/>
-                        <PostPreview/>
+                        <PostList/>
                     </div>
                 </div>
             </div>
