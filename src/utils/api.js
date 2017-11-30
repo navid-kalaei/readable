@@ -35,3 +35,7 @@ export const fetchPosts = (category = null) => {
 export const fetchPost = (id) => (
     fetch(getUrl(`/posts/${id}`), {headers}).then(responseResolved)
 );
+
+export const fetchComments = (id) => (
+    fetch(getUrl(`/posts/${id}/comments`), {headers}).then(responseResolved)
+);
