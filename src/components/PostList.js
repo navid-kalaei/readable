@@ -16,11 +16,10 @@ class PostList extends Component {
  ;
         return (
             <div>
-                {/*<PostPreview/>*/}
                 {posts && Array.isArray(posts) && posts.map((post) => (
                     <PostPreview
                         key={post.id}
-                        props={post}
+                        post={post}
                     />
                 ))}
             </div>

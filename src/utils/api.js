@@ -39,3 +39,15 @@ export const fetchPost = (id) => (
 export const fetchComments = (id) => (
     fetch(getUrl(`/posts/${id}/comments`), {headers}).then(responseResolved)
 );
+
+export const votePost = ({ id, vote }) => {
+    const option = vote === 1 ? "upVote" : "downVote";
+
+    return fetch(
+        getUrl(`/posts/${id}`), {
+            method: "POST",
+            headers,
+            body: JSON.stringify({option})
+        }
+    ).then(responseResolved)
+};
