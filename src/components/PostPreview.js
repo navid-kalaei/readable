@@ -13,6 +13,7 @@ class PostPreview extends Component {
 
     render() {
         const {title, body, author, category, timestamp, voteScore, commentCount} = this.props.post;
+        console.log(timestamp);
 
         return (
             <div>
