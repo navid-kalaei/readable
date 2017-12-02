@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import Moment from 'react-moment';
-import PostFooter from './PostFooter';
+import PostFooter from './ContentFooter';
 
 class PostPreview extends Component {
 
