@@ -33,6 +33,12 @@ class Post extends Component {
                                 category={this.props.category}
                                 postId={this.props.id}
                             />
+                            {this.props.comments && this.props.comments.map((comment) => (
+                                <Comment
+                                    key={comment.id}
+                                    body={comment.body}
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>
