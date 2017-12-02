@@ -7,6 +7,7 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Category from './components/Category';
 import Home from './components/Home';
+import Post from './components/Post';
 import {fetchCategories} from './actions/categories';
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/:category" component={Category}/>
+                    <Route exact path="/posts/:postId" component={Post}/>
                 </Switch>
 
                 <hr/>

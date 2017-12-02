@@ -13,20 +13,19 @@ class PostPreview extends Component {
     downVote = () => (this.props.votePost({id: this.props.post.id, vote: -1}));
 
     render() {
-        const {title, body, author, category, timestamp, voteScore, commentCount} = this.props.post;
-        console.log(timestamp);
+        const {id, title, body, author, category, timestamp, voteScore, commentCount} = this.props.post;
 
         return (
             <div>
                 <div className="post-preview">
-                    <a href="post.html">
+                    <NavLink to={`/posts/${id}`}>
                         <h2 className="post-title">
-                            <NavLink to=""></NavLink>
+                            {title}
                         </h2>
                         <h3 className="post-subtitle">
                             {body}
                         </h3>
-                    </a>
+                    </NavLink>
                     <div className="post-meta">Posted by{' '}
                         <span className="font-weight-bold font-italic">{author}</span>{' '}
                         on <span className="font-italic"><Moment format="MMM Do YYYY">{timestamp}</Moment></span>
