@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {fetchComments} from "../actions/comments";
 import Header from './Header';
-import ContentFooter from './ContentFooter';
+import PostFooter from './PostFooter';
 import Comment from './Comment';
 
 class Post extends Component {
@@ -27,16 +27,17 @@ class Post extends Component {
                             <p>
                                 {this.props.body}
                             </p>
-                            <ContentFooter
+                            <PostFooter
                                 commentCount={this.props.commentCount}
                                 voteScore={this.props.voteScore}
                                 category={this.props.category}
                                 postId={this.props.id}
                             />
+                            <hr/>
                             {this.props.comments && this.props.comments.map((comment) => (
                                 <Comment
                                     key={comment.id}
-                                    body={comment.body}
+                                    comment={comment}
                                 />
                             ))}
                         </div>
