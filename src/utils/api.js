@@ -51,3 +51,15 @@ export const votePost = ({ id, vote }) => {
         }
     ).then(responseResolved)
 };
+
+export const voteComment = ({ id, vote }) => {
+    const option = vote === 1 ? "upVote" : "downVote";
+
+    return fetch(
+        getUrl(`/comments/${id}`), {
+            method: "POST",
+            headers,
+            body: JSON.stringify({option})
+        }
+    ).then(responseResolved)
+};
