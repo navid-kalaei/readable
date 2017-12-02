@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Header from './Header';
-import * as api from '../utils/api';
+import PostFooter from './PostFooter';
 
 class Post extends Component {
 
@@ -19,6 +19,12 @@ class Post extends Component {
                             <p>
                                 {this.props.body}
                             </p>
+                            <PostFooter
+                                commentCount={this.props.commentCount}
+                                voteScore={this.props.voteScore}
+                                category={this.props.category}
+                                postId={this.props.id}
+                            />
                         </div>
                     </div>
                 </div>
