@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {NavLink} from 'react-router-dom';
 import {bindActionCreators} from 'redux';
 import {votePost} from "../actions/posts";
 import Moment from 'react-moment';
@@ -20,7 +21,7 @@ class PostPreview extends Component {
                 <div className="post-preview">
                     <a href="post.html">
                         <h2 className="post-title">
-                            {title}
+                            <NavLink to=""></NavLink>
                         </h2>
                         <h3 className="post-subtitle">
                             {body}

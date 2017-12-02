@@ -21,8 +21,8 @@ export default (props) => {
                     <div className="col-lg-8 col-md-10 mx-auto">
                         {isHome &&
                         (<div className="site-heading">
-                            <h1>Clean Blog</h1>
-                            <span className="subheading">A Blog Theme by Start Bootstrap</span>
+                            <h1>Readable</h1>
+                            <span className="subheading">A Blog by <span className="font-weight-bold font-italic">Navid</span></span>
                         </div>)
                         }
                         {isPost &&
