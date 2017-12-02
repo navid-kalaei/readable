@@ -37,10 +37,9 @@ class PostList extends Component {
 }
 
 
-const mapStateToProps = ({posts, comments}) => (
+const mapStateToProps = ({posts}) => (
     {
-        posts,
-        comments
+        posts
     }
 );
 
