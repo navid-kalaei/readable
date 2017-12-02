@@ -1,30 +1,23 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import Header from './Header';
 import * as api from '../utils/api';
 
 class Post extends Component {
 
-    state = {};
-
-    componentWillMount() {
-        const { postId } = this.props.match.params;
-        api.fetchPost(postId).then((post) => this.setState(post))
-    }
-
     render() {
-        console.log(this.state);
         return(
             <div>
                 <Header
-                    title={this.state.title}
-                    author={this.state.author}
-                    timestamp={this.state.timestamp}
+                    title={this.props.title}
+                    author={this.props.author}
+                    timestamp={this.props.timestamp}
                 />
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 col-md-10 mx-auto">
                             <p>
-                                {this.state.body}
+                                {this.props.body}
                             </p>
                         </div>
                     </div>
@@ -34,4 +27,11 @@ class Post extends Component {
     }
 }
 
-export default Post;
+const mapStateToProps = ({posts}, ownProps) => {
+    const postId = ownProps.match.params.postId;
+    // TODO: hard coded index 0
+    // TODO: if the post was not added to store before an error raises, like refreshing a post page
+    return posts.filter((p) => (p.id === postId))[0];
+};
+
+export default connect(mapStateToProps)(Post);
