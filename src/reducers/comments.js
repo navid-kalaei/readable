@@ -10,7 +10,13 @@ export default (state = initialState, action) => {
                 [action.postId]: action.comments
             };
         case UPDATE_COMMENT:
-            return state;
+            const parentId = action.comment.parentId;
+            const newComment = action.comment;
+            return {
+                ...state,
+                [parentId]: state[parentId].map((c) => ( c.id != newComment.id ? c : newComment))
+
+            };
         default:
             return state;
     }
