@@ -9,13 +9,11 @@ import Category from './components/Category';
 import Home from './components/Home';
 import Post from './components/Post';
 import {fetchCategories} from './actions/categories';
-import {fetchPosts} from './actions/posts';
 
 class App extends Component {
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchCategories();
-        this.props.fetchPosts();
     }
 
     render() {
@@ -43,7 +41,6 @@ const mapDispatchToProps = (dispatch) => (
     bindActionCreators(
         {
             fetchCategories,
-            fetchPosts
         },
         dispatch
     )

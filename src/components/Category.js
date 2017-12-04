@@ -20,7 +20,7 @@ class Category extends Component {
             this.fetchCategoryPosts(newCategory);
         }
     }
-    componentWillMount() {
+    componentDidMount() {
         const category = this.props.match.params.category;
         this.fetchCategoryPosts(category);
     }
