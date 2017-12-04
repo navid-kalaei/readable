@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import {addPost} from '../actions/posts';
 
 class PostAdd extends Component {
 
@@ -16,10 +18,16 @@ class PostAdd extends Component {
 
     onSubmit = (ev) => {
         ev.preventDefault();
-        const {author, body} = this.state;
-        const {postId} = this.props;
-        this.props.addComment({postId, author, body});
-        this.setState({author: "", body: ""});
+        const {author, body, title, category} = this.state;
+        this.props.addPost({title, body, author, category});
+        this.setState(
+            {
+                author: '',
+                body: '',
+                title: '',
+                category: ''
+            }
+        );
     };
 
     render() {
@@ -47,7 +55,7 @@ class PostAdd extends Component {
                                             name="title"
                                             className="form-control"
                                             id="titleInput"
-                                            placeholder="Author"
+                                            placeholder="Title"
                                             required
                                             onChange={this.onChange('title')}
                                             value={title}
@@ -98,7 +106,7 @@ class PostAdd extends Component {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary">Save changes</button>
+                                <button type="button" className="btn btn-primary" onClick={this.onSubmit} data-dismiss="modal">Save changes</button>
                             </div>
                         </div>
                     </div>
@@ -109,8 +117,16 @@ class PostAdd extends Component {
 }
 
 
+const mapDispatchToProps = (dispatch) => (
+    bindActionCreators(
+        {
+            addPost
+        },
+        dispatch
+    )
+);
+
 const mapStateToProps = ({categories}) => {
-    console.log('categories!', categories);
     return {
         categories: categories.reduce((categories, category) => {
             categories.push(category.name);
@@ -119,4 +135,4 @@ const mapStateToProps = ({categories}) => {
     };
 };
 
-export default connect(mapStateToProps)(PostAdd);
+export default connect(mapStateToProps, mapDispatchToProps)(PostAdd);
