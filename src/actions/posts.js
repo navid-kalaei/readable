@@ -18,7 +18,6 @@ export const fetchPosts = (category = null) => (dispatch) => (
 
 export const addPost = ({title, body, author, category}) => (dispatch) => (
     api.addPost({title, body, author, category}).then((post) => {
-        console.info('POOOOOOOOOOST!',post);
         return dispatch({
             type: ADD_POST,
             post
