@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 
 class Nav extends Component {
 
     render() {
-        const { categories } = this.props;
+        const {categories} = this.props;
 
         return (
             <nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -16,12 +16,15 @@ class Nav extends Component {
                             data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                             aria-label="Toggle navigation">
                         Menu
-                        <i className="fa fa-bars" />
+                        <i className="fa fa-bars"/>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ml-auto flex-row-reverse">
                             <li className="nav-item">
-                                <a className="nav-link" href="post.html">Add Post</a>
+                                <button type="button" className="btn-sm btn-outline-light" data-toggle="modal"
+                                        data-target="#postAddModal">
+                                    ADD POST
+                                </button>
                             </li>
                             {categories && Array.isArray(categories) && categories.map((category) => (
                                 <li key={category.path} className="nav-item">
@@ -33,13 +36,13 @@ class Nav extends Component {
                     </div>
                 </div>
             </nav>
-        )
+    )
     }
-}
+    }
 
 
-const mapStateToProps = ({ categories }) => ({
-    categories
-});
+    const mapStateToProps = ({categories}) => ({
+        categories
+    });
 
-export default connect(mapStateToProps)(Nav);
+    export default connect(mapStateToProps)(Nav);
