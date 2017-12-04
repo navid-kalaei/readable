@@ -1,9 +1,7 @@
 import { FETCH_CATEGORIES } from "../actions/categories";
 
 
-const initialState = {
-    categories: null
-};
+const initialState = [];
 
 export default (state = initialState, action) => {
 
