@@ -82,6 +82,19 @@ export const addComment = ({ postId, author, body }) => (
     ).then(responseResolved)
 );
 
+export const updateComment = ({ id, body }) => (
+    fetch(
+        getUrl(`/comments/${id}`), {
+            method: "PUT",
+            headers,
+            body: JSON.stringify({
+                timestamp: Date.now(),
+                body
+            })
+        }
+    ).then(responseResolved)
+);
+
 export const deleteComment = (id) => (
     fetch(
         getUrl(`/comments/${id}`), {
