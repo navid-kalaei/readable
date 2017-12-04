@@ -5,6 +5,7 @@ import {fetchComments} from "../actions/comments";
 import Header from './Header';
 import PostFooter from './PostFooter';
 import Comment from './Comment';
+import CommentForm from './CommentForm';
 
 class Post extends Component {
 
@@ -13,7 +14,6 @@ class Post extends Component {
     }
 
     render() {
-        console.log(this.props);
         return(
             <div>
                 <Header
@@ -40,6 +40,8 @@ class Post extends Component {
                                     comment={comment}
                                 />
                             ))}
+                            <hr/>
+                            <CommentForm postId={this.props.id}/>
                         </div>
                     </div>
                 </div>

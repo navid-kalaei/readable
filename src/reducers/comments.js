@@ -1,4 +1,4 @@
-import {FETCH_COMMENTS, UPDATE_COMMENT} from "../actions/comments";
+import {ADD_COMMENT, FETCH_COMMENTS, UPDATE_COMMENT} from "../actions/comments";
 
 const initialState = {};
 
@@ -9,6 +9,13 @@ export default (state = initialState, action) => {
                 ...state,
                 [action.postId]: action.comments
             };
+
+        case ADD_COMMENT:
+            return {
+                ...state,
+                [action.comment.parentId]: [...(state[action.comment.parentId] || []), action.comment]
+            };
+
         case UPDATE_COMMENT:
             const parentId = action.comment.parentId;
             const newComment = action.comment;

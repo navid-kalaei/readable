@@ -1,7 +1,9 @@
 import * as api from '../utils/api';
 
 export const FETCH_COMMENTS = 'FETCH_COMMENTS';
+export const FETCH_COMMENT = 'FETCH_COMMENT';
 export const UPDATE_COMMENT = 'UPDATE_COMMENT';
+export const ADD_COMMENT = 'ADD_COMMENT';
 
 export const fetchComments = (postId = null) => (dispatch) => (
     api.fetchComments(postId).then((comments) => (
@@ -14,6 +16,26 @@ export const fetchComments = (postId = null) => (dispatch) => (
         )
     ))
 );
+
+export const fetchComment = (commentId) => (dispatch) => (
+    api.fetchComment(commentId).then((comment) => (
+        dispatch({
+            type: FETCH_COMMENT,
+            comment
+        })
+    ))
+);
+
+export const addComment = ({postId, author, body}) => (dispatch) => (
+    api.addComment({postId, author, body}).then((comment) => (
+            dispatch({
+                type: ADD_COMMENT,
+                comment
+            })
+        )
+    )
+);
+
 
 export const voteComment = ({id, vote}) => (dispatch) => (
     api.voteComment({id, vote}).then((comment) => (

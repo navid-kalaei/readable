@@ -54,6 +54,15 @@ export const fetchComments = (id) => (
     fetch(getUrl(`/posts/${id}/comments`), {headers}).then(responseResolved)
 );
 
+export const fetchComment = (id) => (
+    fetch(
+        getUrl(`/comments/${id}`),
+        {
+            headers
+        }
+    ).then(responseResolved)
+);
+
 export const voteComment = ({ id, vote }) => {
     const option = vote === 1 ? "upVote" : "downVote";
 
