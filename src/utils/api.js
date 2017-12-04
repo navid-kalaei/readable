@@ -1,3 +1,5 @@
+import uuid from 'uuid/v1';
+
 const BASE_URL = "http://localhost:3001";
 const headers = {
     Authorization: "navid-kalaei-readable",
@@ -36,10 +38,6 @@ export const fetchPost = (id) => (
     fetch(getUrl(`/posts/${id}`), {headers}).then(responseResolved)
 );
 
-export const fetchComments = (id) => (
-    fetch(getUrl(`/posts/${id}/comments`), {headers}).then(responseResolved)
-);
-
 export const votePost = ({ id, vote }) => {
     const option = vote === 1 ? "upVote" : "downVote";
 
@@ -52,6 +50,10 @@ export const votePost = ({ id, vote }) => {
     ).then(responseResolved)
 };
 
+export const fetchComments = (id) => (
+    fetch(getUrl(`/posts/${id}/comments`), {headers}).then(responseResolved)
+);
+
 export const voteComment = ({ id, vote }) => {
     const option = vote === 1 ? "upVote" : "downVote";
 
@@ -63,3 +65,19 @@ export const voteComment = ({ id, vote }) => {
         }
     ).then(responseResolved)
 };
+
+export const addComment = ({ postId, author, body }) => (
+    fetch(
+        getUrl('/comments'), {
+            method: "POST",
+            headers,
+            body: JSON.stringify({
+                id: uuid(),
+                timestamp: Date.now(),
+                parentId: postId,
+                author,
+                body
+            })
+        }
+    ).then(responseResolved)
+);
