@@ -56,6 +56,16 @@ export const addPost = ({title, body, author, category}) => (
     )
 ).then(responseResolved);
 
+export const deletePost = (id) => (
+    fetch(
+        getUrl(`/posts/${id}`),
+        {
+            method: "DELETE",
+            headers
+        }
+    ).then(responseResolved)
+);
+
 export const votePost = ({ id, vote }) => {
     const option = vote === 1 ? "upVote" : "downVote";
 

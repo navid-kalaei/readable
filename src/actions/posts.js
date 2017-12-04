@@ -4,6 +4,7 @@ export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_POST = 'FETCH_POST';
 export const ADD_POST = 'ADD_POST';
 export const UPDATE_POST = 'UPDATE_POST';
+export const DELETE_POST = 'DELETE_POST';
 
 export const fetchPosts = (category = null) => (dispatch) => (
     api.fetchPosts(category).then((posts) => {
@@ -24,6 +25,15 @@ export const addPost = ({title, body, author, category}) => (dispatch) => (
         });
     }
 ));
+
+export const deletePost = (id) => (dispatch) => (
+    api.deletePost(id).then((post) => (
+        dispatch({
+            type: DELETE_POST,
+            post
+        })
+    ))
+);
 
 export const votePost = ({ id, vote }) => (dispatch) => (
     api.votePost({id, vote}).then((post) =>
