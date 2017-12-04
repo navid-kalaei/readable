@@ -81,3 +81,12 @@ export const addComment = ({ postId, author, body }) => (
         }
     ).then(responseResolved)
 );
+
+export const deleteComment = (id) => (
+    fetch(
+        getUrl(`/comments/${id}`), {
+            method: "DELETE",
+            headers
+        }
+    ).then(responseResolved)
+);
