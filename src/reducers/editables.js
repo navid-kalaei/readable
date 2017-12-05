@@ -1,4 +1,4 @@
-import {DISMISS_EDITABLE_COMMENT, FETCH_COMMENT} from '../actions/editables';
+import {DISMISS_EDITABLE_COMMENT, DISMISS_EDITABLE_POST, FETCH_COMMENT, FETCH_POST} from '../actions/editables';
 
 
 const initialState = {
@@ -18,6 +18,18 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 comment: {}
+            };
+
+        case FETCH_POST:
+            return {
+                ...state,
+                post: action.post
+            };
+
+        case DISMISS_EDITABLE_POST:
+            return {
+                ...state,
+                post: {}
             };
 
         default:
