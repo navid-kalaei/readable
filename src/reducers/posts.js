@@ -28,7 +28,7 @@ export default (posts = initialState, action) => {
 
         case SORT_BY_DATE:
             const sortedPostsByDate = [...posts];
-            return sortedPostsByDate.sort(sortBy('timestamp'));
+            return sortedPostsByDate.sort(sortBy('-timestamp'));
 
         case SORT_BY_VOTE:
             const sortedPostsByVote = [...posts];
