@@ -32,7 +32,6 @@ class PostAdd extends Component {
 
 
     componentDidMount() {
-        const categories = this.props.categories;
         this.setState({category: this.props.categories})
     }
 
