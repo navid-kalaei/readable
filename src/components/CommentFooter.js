@@ -23,7 +23,7 @@ class PostFooter extends Component {
                             <span style={{marginRight: "15px"}}>
                                 <ThumpDownIcon onClick={this.downVote}/> {this.props.voteScore} <ThumpUpIcon onClick={this.upVote}/>
                             </span>
-                            <button className="btn-sm btn-primary">EDIT</button>
+                            <button className="btn-sm btn-primary" data-toggle="modal" data-target="#editCommentModal">EDIT</button>
                             <button
                                 className="btn-sm btn-danger"
                                 onClick={this.deleteComment}

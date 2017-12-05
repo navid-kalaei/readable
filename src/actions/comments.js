@@ -47,6 +47,16 @@ export const deleteComment = (id) => (dispatch) => (
     ))
 );
 
+
+export const editComment = ({id, body}) => (dispatch) => (
+    api.editComment({id, body}).then((comment) => (
+        dispatch({
+            type: UPDATE_COMMENT,
+            comment
+        })
+    ))
+);
+
 export const voteComment = ({id, vote}) => (dispatch) => (
     api.voteComment({id, vote}).then((comment) => (
             dispatch({
