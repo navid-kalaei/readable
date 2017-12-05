@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import PostPreview from './PostPreview';
 import {connect} from 'react-redux';
 
+
+
 class PostList extends Component {
 
     render() {
 
         const { posts } = this.props || [];
-
         return (
             <div>
                 {posts && Array.isArray(posts) && posts.map((post) => (
@@ -22,9 +23,9 @@ class PostList extends Component {
 }
 
 
-const mapStateToProps = ({posts}) => (
+const mapStateToProps = (store) => (
     {
-        posts
+        posts: store.posts
     }
 );
 

@@ -4,11 +4,12 @@ import {connect} from 'react-redux';
 import {fetchPosts} from "../actions/posts";
 import Header from './Header';
 import PostList from './PostList';
+import SortControl from './SortControl';
 
 class Home extends Component
 {
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchPosts();
     }
 
@@ -20,6 +21,7 @@ class Home extends Component
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 col-md-10 mx-auto">
+                            <SortControl/>
                             <PostList/>
                         </div>
                     </div>

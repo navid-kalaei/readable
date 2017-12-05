@@ -4,6 +4,9 @@ export const FETCH_POSTS = 'FETCH_POSTS';
 export const ADD_POST = 'ADD_POST';
 export const UPDATE_POST = 'UPDATE_POST';
 export const DELETE_POST = 'DELETE_POST';
+export const SORT_BY_VOTE = 'SORT_BY_VOTE';
+export const SORT_BY_DATE = 'SORT_BY_DATE';
+
 
 export const fetchPosts = (category = null) => (dispatch) => (
     api.fetchPosts(category).then((posts) => {
@@ -51,4 +54,16 @@ export const votePost = ({ id, vote }) => (dispatch) => (
                 post
             }
         ))
+);
+
+export const sortPostsByDate = () => (dispatch) => (
+    dispatch({
+        type: SORT_BY_DATE
+    })
+);
+
+export const sortPostsByVote = () => (dispatch) => (
+    dispatch({
+        type: SORT_BY_VOTE
+    })
 );
