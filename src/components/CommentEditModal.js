@@ -45,24 +45,24 @@ class CommentEditModal extends Component {
                             <div className="modal-body">
                                 <form method="POST" onSubmit={this.onSubmit}>
                                     <div className="form-group">
-                                        <label htmlFor="titleInput">Author</label>
+                                        <label htmlFor="editCommentTitleInput">Author</label>
                                         <input
                                             type="text"
-                                            name="title"
+                                            name="author"
                                             className="form-control"
-                                            id="titleInput"
+                                            id="editCommentTitleInput"
                                             placeholder="Title"
                                             value={this.props.author}
                                             disabled
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="postInput">Comment</label>
+                                        <label htmlFor="editCommentInput">Comment</label>
                                         <textarea
                                             type="text"
                                             name="body"
                                             className="form-control"
-                                            id="commentInput"
+                                            id="editCommentInput"
                                             placeholder="Comment"
                                             onChange={this.onChange}
                                             value={this.state.body}
