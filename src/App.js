@@ -9,6 +9,7 @@ import Category from './components/Category';
 import Home from './components/Home';
 import Post from './components/Post';
 import PostAddModal from './components/PostAddModal';
+import PostEditModal from './components/PostEditModal';
 import CommentEditModal from './components/CommentEditModal';
 import {fetchCategories} from './actions/categories';
 
@@ -29,6 +30,7 @@ class App extends Component {
                     <Route exact path="/posts/:postId" component={Post}/>
                 </Switch>
                 <PostAddModal/>
+                <PostEditModal/>
                 <CommentEditModal/>
                 <hr/>
                 <Footer/>

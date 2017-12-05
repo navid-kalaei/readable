@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {votePost, deletePost} from "../actions/posts";
+import {fetchPost} from '../actions/editables';
 import ThumpUpIcon from 'react-icons/lib/md/thumb-up'
 import ThumpDownIcon from 'react-icons/lib/md/thumb-down'
 
@@ -11,6 +12,8 @@ class PostFooter extends Component {
     downVote = () => (this.props.votePost({id: this.props.postId, vote: -1}));
 
     removePost = () => (this.props.deletePost(this.props.postId));
+
+    addPostToEditables = () => (this.props.fetchPost(this.props.postId));
 
     render() {
         return (
@@ -22,7 +25,7 @@ class PostFooter extends Component {
                             <span style={{marginRight: "15px"}}>
                                 <ThumpDownIcon onClick={this.downVote}/> {this.props.voteScore} <ThumpUpIcon onClick={this.upVote}/>
                             </span>
-                            <button className="btn-sm btn-primary">EDIT</button>
+                            <button className="btn-sm btn-primary" data-toggle="modal" data-target="#editPostModal" onClick={this.addPostToEditables}>EDIT</button>
                             <button className="btn-sm btn-danger" onClick={this.removePost}>Remove</button>
                         </span>
                     </span>
@@ -39,7 +42,8 @@ const mapDispatchToProps = (dispatch) => (
     bindActionCreators(
         {
             votePost,
-            deletePost
+            deletePost,
+            fetchPost
         },
         dispatch
     )
