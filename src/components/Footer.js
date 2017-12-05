@@ -7,7 +7,7 @@ export default () => (
                 <div className="col-lg-8 col-md-10 mx-auto">
                     <ul className="list-inline text-center">
                         <li className="list-inline-item">
-                            <a href="https://twitter.com">
+                            <a href="https://twitter.com/navidkalaei">
                   <span className="fa-stack fa-lg">
                     <span className="fa fa-circle fa-stack-2x"/>
                     <span className="fa fa-twitter fa-stack-1x fa-inverse"/>
@@ -15,10 +15,10 @@ export default () => (
                             </a>
                         </li>
                         <li className="list-inline-item">
-                            <a href="https://facebook.com">
+                            <a href="https://www.linkedin.com/in/navid-kalaei/">
                   <span className="fa-stack fa-lg">
                     <span className="fa fa-circle fa-stack-2x"/>
-                    <span className="fa fa-facebook fa-stack-1x fa-inverse"/>
+                    <span className="fa fa-linkedin fa-stack-1x fa-inverse"/>
                   </span>
                             </a>
                         </li>
