@@ -66,6 +66,20 @@ export const deletePost = (id) => (
     ).then(responseResolved)
 );
 
+export const editPost = ({id, title, body}) => (
+    fetch(
+        getUrl(`/posts/${id}`),
+        {
+            method: "PUT",
+            headers,
+            body: JSON.stringify({
+                title,
+                body
+            })
+        }
+    ).then(responseResolved)
+);
+
 export const votePost = ({ id, vote }) => {
     const option = vote === 1 ? "upVote" : "downVote";
 
