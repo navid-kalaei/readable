@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import {fetchPosts} from '../actions/posts';
 import PostList from './PostList';
 import Header from './Header';
+import SortControl from './SortControl';
 
 
 class Category extends Component {
@@ -35,6 +36,8 @@ class Category extends Component {
                         <div className="col-lg-8 col-md-10 mx-auto">
                             <h1 className="display-4 text-capitalize text-center">{category}</h1>
                             <hr/>
+                            <br/>
+                            <SortControl/>
                             <PostList/>
                         </div>
                     </div>
