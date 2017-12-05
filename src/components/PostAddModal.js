@@ -33,7 +33,6 @@ class PostAdd extends Component {
 
     componentDidMount() {
         const categories = this.props.categories;
-        const initCategory = Array.isArray(categories) && categories.length ? categories[0] : 'uncategorized';
         this.setState({category: this.props.categories})
     }
 
