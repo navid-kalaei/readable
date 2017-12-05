@@ -17,7 +17,7 @@ class CommentEditModal extends Component {
         ev.preventDefault();
         const id = this.props.id;
         const {body} = this.state;
-        this.props.addPost({id, body});
+        this.props.editComment({id, body});
         this.setState({body: ''});
     };
 
