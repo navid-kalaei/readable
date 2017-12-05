@@ -1,7 +1,6 @@
 import * as api from '../utils/api';
 
 export const FETCH_POSTS = 'FETCH_POSTS';
-export const FETCH_POST = 'FETCH_POST';
 export const ADD_POST = 'ADD_POST';
 export const UPDATE_POST = 'UPDATE_POST';
 export const DELETE_POST = 'DELETE_POST';
@@ -25,6 +24,15 @@ export const addPost = ({title, body, author, category}) => (dispatch) => (
         });
     }
 ));
+
+export const editPost = ({id, title, body}) => (dispatch) => (
+    api.editPost({id, title, body}).then((post) =>
+        dispatch({
+            type: UPDATE_POST,
+            post
+        })
+    )
+);
 
 export const deletePost = (id) => (dispatch) => (
     api.deletePost(id).then((post) => (
