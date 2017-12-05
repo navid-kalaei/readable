@@ -1,5 +1,5 @@
 import sortBy from 'sort-by';
-import {ADD_POST, DELETE_POST, FETCH_POSTS, SORT_BY_DATE, UPDATE_POST} from "../actions/posts";
+import {ADD_POST, DELETE_POST, FETCH_POSTS, SORT_BY_DATE, SORT_BY_VOTE, UPDATE_POST} from "../actions/posts";
 
 
 const initialState = [];
@@ -27,8 +27,12 @@ export default (posts = initialState, action) => {
             );
 
         case SORT_BY_DATE:
-            const sortedPosts = [...posts];
-            return sortedPosts.sort(sortBy('timestamp'));
+            const sortedPostsByDate = [...posts];
+            return sortedPostsByDate.sort(sortBy('timestamp'));
+
+        case SORT_BY_VOTE:
+            const sortedPostsByVote = [...posts];
+            return sortedPostsByVote.sort(sortBy('-voteScore'));
 
         default:
             return posts;

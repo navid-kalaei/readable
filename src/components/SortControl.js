@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {sortPostsByDate} from "../actions/posts";
+import {sortPostsByDate, sortPostsByVote} from "../actions/posts";
 
 
 class SortControl extends Component {
 
     sortPostsByDate = () => (this.props.sortPostsByDate());
+    sortPostsByVote = () => (this.props.sortPostsByVote());
 
     render() {
         return(
@@ -14,7 +15,7 @@ class SortControl extends Component {
                 <label className="btn btn-secondary" onClick={this.sortPostsByDate}>
                     <input type="radio" name="options" id="sortByDate" autoComplete="off"/>By Date
                 </label>
-                <label className="btn btn-secondary">
+                <label className="btn btn-secondary" onClick={this.sortPostsByVote}>
                     <input type="radio" name="options" id="sortByVote" autoComplete="off"/> By Score
                 </label>
             </div>
@@ -26,7 +27,8 @@ class SortControl extends Component {
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators(
         {
-            sortPostsByDate
+            sortPostsByDate,
+            sortPostsByVote
         },
         dispatch
     )
