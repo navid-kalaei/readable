@@ -21,13 +21,11 @@ class CommentEditModal extends Component {
         this.setState({body: ''});
     };
 
-    componentDidMount() {
-        this.setState({body: this.props.body})
+    componentWillReceiveProps(nextProps) {
+        this.setState({body: nextProps.body})
     }
 
     render() {
-        const {body} = this.state;
-        console.log("constracted");
         return (
             <div>
                 {/*<!-- Modal -->*/}
@@ -63,7 +61,7 @@ class CommentEditModal extends Component {
                                             id="commentInput"
                                             placeholder="Comment"
                                             onChange={this.onChange}
-                                            value={body}
+                                            value={this.state.body}
                                         />
                                     </div>
                                 </form>
@@ -90,8 +88,8 @@ const mapDispatchToProps = (dispatch) => (
     )
 );
 
-const mapStateToProps = (store, ownProps) => {
-    return ownProps;
+const mapStateToProps = (store) => {
+    return {...store.editables.comment};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentEditModal);
