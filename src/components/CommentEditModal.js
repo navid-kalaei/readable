@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {editComment} from '../actions/comments';
+import {dismissEditableComment} from '../actions/editables';
 
 class CommentEditModal extends Component {
 
@@ -18,8 +19,11 @@ class CommentEditModal extends Component {
         const id = this.props.id;
         const {body} = this.state;
         this.props.editComment({id, body});
+        this.porps.dismissEditableComment(id);
         this.setState({body: ''});
     };
+
+    dismissComment = () => (this.props.dismissEditableComment(this.props.id));
 
     componentWillReceiveProps(nextProps) {
         this.setState({body: nextProps.body})
@@ -34,7 +38,7 @@ class CommentEditModal extends Component {
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h5 className="modal-title" id="editCommentModalLabel">Edit Comment</h5>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.dismissComment}>
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -67,7 +71,7 @@ class CommentEditModal extends Component {
                                 </form>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={this.dismissComment}>Close</button>
                                 <button type="button" className="btn btn-primary" onClick={this.onSubmit} data-dismiss="modal">Save changes</button>
                             </div>
                         </div>
@@ -82,7 +86,8 @@ class CommentEditModal extends Component {
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators(
         {
-            editComment
+            editComment,
+            dismissEditableComment
         },
         dispatch
     )
