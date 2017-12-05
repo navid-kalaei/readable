@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import {fetchPosts} from '../actions/posts';
 import {fetchComments} from "../actions/comments";
 import Header from './Header';
 import PostFooter from './PostFooter';
@@ -10,10 +11,22 @@ import CommentForm from './CommentForm';
 class Post extends Component {
 
     componentDidMount() {
-        this.props.fetchComments(this.props.id);
+        if(!this.props.id){
+            this.props.fetchPosts();
+        }
+        else {
+            this.props.fetchComments(this.props.id)
+        }
+    }
+
+    componentWillReceiveProps(nextProps){
+        if(!nextProps.comments){
+            nextProps.fetchComments(nextProps.id);
+        }
     }
 
     render() {
+        console.log('props!!!', this.props);
         return(
             <div>
                 <Header
@@ -52,8 +65,6 @@ class Post extends Component {
 
 const mapStateToProps = ({posts, comments}, ownProps) => {
     const postId = ownProps.match.params.postId;
-    // TODO: hard coded index 0
-    // TODO: if the post was not added to store before an error raises, like refreshing a post page
     const post = posts.filter((p) => (p.id === postId))[0];
 
     return {
@@ -66,6 +77,7 @@ const mapStateToProps = ({posts, comments}, ownProps) => {
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators(
         {
+            fetchPosts,
             fetchComments
         },
         dispatch
