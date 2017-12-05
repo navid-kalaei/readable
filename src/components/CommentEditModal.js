@@ -19,7 +19,7 @@ class CommentEditModal extends Component {
         const id = this.props.id;
         const {body} = this.state;
         this.props.editComment({id, body});
-        this.porps.dismissEditableComment(id);
+        this.props.dismissEditableComment(id);
         this.setState({body: ''});
     };
 
