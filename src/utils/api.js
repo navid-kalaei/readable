@@ -119,7 +119,7 @@ export const addComment = ({ postId, author, body }) => (
     ).then(responseResolved)
 );
 
-export const updateComment = ({ id, body }) => (
+export const editComment = ({ id, body }) => (
     fetch(
         getUrl(`/comments/${id}`), {
             method: "PUT",
