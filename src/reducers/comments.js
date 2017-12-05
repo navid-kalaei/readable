@@ -27,7 +27,7 @@ export default (state = initialState, action) => {
             const newComment = action.comment;
             return {
                 ...state,
-                [parentId]: state[parentId].map((c) => ( c.id != newComment.id ? c : newComment))
+                [parentId]: state[parentId].map((c) => ( c.id !== newComment.id ? c : newComment))
 
             };
         default:
