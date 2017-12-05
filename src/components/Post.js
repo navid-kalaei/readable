@@ -26,7 +26,7 @@ class Post extends Component {
     }
 
     render() {
-        console.log('props!!!', this.props);
+        const commentCount = !!this.props.comments ? this.props.comments.length : 0;
         return(
             <div>
                 <Header
@@ -41,7 +41,7 @@ class Post extends Component {
                                 {this.props.body}
                             </p>
                             <PostFooter
-                                commentCount={this.props.commentCount}
+                                commentCount={commentCount}
                                 voteScore={this.props.voteScore}
                                 category={this.props.category}
                                 postId={this.props.id}
