@@ -30,6 +30,14 @@ class PostAdd extends Component {
         );
     };
 
+
+    componentDidMount() {
+        const categories = this.props.categories;
+        const initCategory = Array.isArray(categories) && categories.length ? categories[0] : 'uncategorized';
+        this.setState({category: this.props.categories})
+    }
+
+
     render() {
         const {author, body, title, category} = this.state;
         const storeCategories = this.props.categories;
@@ -95,7 +103,10 @@ class PostAdd extends Component {
                                                 className="form-control text-capitalize"
                                                 onChange={this.onChange('category')}
                                                 value={category}
+                                                required
+                                                aria-required="true"
                                             >
+                                                <option value="">Choose One</option>
                                                 {storeCategories && storeCategories.map((c) => (
                                                     <option key={`postModal/${c}`} value={c} className="text-capitalize">{c}</option>
                                                 ))}
