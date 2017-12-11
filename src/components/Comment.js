@@ -2,7 +2,7 @@ import React from 'react';
 import CommentFooter from './CommentFooter';
 
 
-export default Comment = (props) => {
+const Comment = (props) => {
 
     const {id, author, body, timestamp, voteScore} = props.comment;
 
@@ -17,4 +17,7 @@ export default Comment = (props) => {
             />
         </div>
     );
-}
+};
+
+
+export default Comment;
