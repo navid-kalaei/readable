@@ -13,7 +13,8 @@ class Post extends Component {
 
     componentDidMount() {
         if(!this.props.id){
-            this.props.fetchPost(this.props.match.params.postId);
+            this.props.fetchPost(this.props.match.params.postId)
+                .catch((err) => (this.props.history.push('/404')));
         }
         else {
             this.props.fetchComments(this.props.id)
