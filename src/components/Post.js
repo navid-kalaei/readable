@@ -47,6 +47,7 @@ class Post extends Component {
                                 voteScore={this.props.voteScore}
                                 category={this.props.category}
                                 postId={this.props.id}
+                                history={this.props.history}
                             />
                             <hr/>
                             {this.props.comments && this.props.comments.map((comment) => (

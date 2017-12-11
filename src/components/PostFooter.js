@@ -16,6 +16,7 @@ class PostFooter extends Component {
     removePost = () => {
         this.props.deleteComments(this.props.postId);
         this.props.deletePost(this.props.postId);
+        this.props.history && this.props.history.push('/404');
     };
 
     addPostToEditables = () => (this.props.fetchPost(this.props.postId));
