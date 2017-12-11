@@ -1,4 +1,4 @@
-import {ADD_COMMENT, DELETE_COMMENT, FETCH_COMMENTS, UPDATE_COMMENT} from "../actions/comments";
+import {ADD_COMMENT, DELETE_COMMENT, DELETE_COMMENTS, FETCH_COMMENTS, UPDATE_COMMENT} from "../actions/comments";
 
 const initialState = {};
 
@@ -21,6 +21,17 @@ export default (state = initialState, action) => {
                 ...state,
                 [action.comment.parentId]: state[action.comment.parentId].filter((c) => c.id !== action.comment.id)
             };
+
+        case DELETE_COMMENTS:
+            const newState = Object.keys(state)
+                .filter((postId) => (postId !== action.postId))
+                .reduce((newState, postId) =>{
+                    newState[postId] = state[postId];
+                    return newState;
+                }, {});
+
+            newState[action.postId] = [];
+            return newState;
 
         case UPDATE_COMMENT:
             const parentId = action.comment.parentId;

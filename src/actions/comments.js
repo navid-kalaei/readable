@@ -5,6 +5,7 @@ export const FETCH_COMMENT = 'FETCH_COMMENT';
 export const UPDATE_COMMENT = 'UPDATE_COMMENT';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
+export const DELETE_COMMENTS = 'DELETE_COMMENTS';
 
 export const fetchComments = (postId = null) => (dispatch) => (
     api.fetchComments(postId).then((comments) => (
@@ -47,6 +48,12 @@ export const deleteComment = (id) => (dispatch) => (
     ))
 );
 
+export const deleteComments = (postId) => (dispatch) => (
+    dispatch({
+        type: DELETE_COMMENTS,
+        postId
+    })
+);
 
 export const editComment = ({id, body}) => (dispatch) => (
     api.editComment({id, body}).then((comment) => (

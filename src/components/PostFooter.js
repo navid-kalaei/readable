@@ -3,15 +3,20 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {votePost, deletePost} from "../actions/posts";
 import {fetchPost} from '../actions/editables';
+import {deleteComments} from '../actions/comments';
 import ThumpUpIcon from 'react-icons/lib/md/thumb-up'
 import ThumpDownIcon from 'react-icons/lib/md/thumb-down'
+
 
 class PostFooter extends Component {
 
     upVote = () => (this.props.votePost({id: this.props.postId, vote: 1}));
     downVote = () => (this.props.votePost({id: this.props.postId, vote: -1}));
 
-    removePost = () => (this.props.deletePost(this.props.postId));
+    removePost = () => {
+        this.props.deleteComments(this.props.postId);
+        this.props.deletePost(this.props.postId);
+    };
 
     addPostToEditables = () => (this.props.fetchPost(this.props.postId));
 
@@ -43,7 +48,8 @@ const mapDispatchToProps = (dispatch) => (
         {
             votePost,
             deletePost,
-            fetchPost
+            fetchPost,
+            deleteComments
         },
         dispatch
     )
