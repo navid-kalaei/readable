@@ -12,5 +12,5 @@ You can send post, remove, edit, and vote!. And you have access for the same opt
 
 **Note:** The demo interacts with the local host. So for running local server you can either follow [the Udacity instractions]('https://github.com/udacity/reactnd-project-readable-starter'), or if your an advanced git user init the submodule of this project :D.
 
-Many thanks to Udacity that made me able to develop this project.
-Also to [BlackrockDigital]('https://github.com/BlackrockDigital/') for [their beautiful free template]('https://github.com/BlackrockDigital/startbootstrap-clean-blog').
+Many thanks to [Udacity](https://www.udacity.com/) that made me able to develop this project.
+Also to [BlackrockDigital](https://github.com/BlackrockDigital/) for [their beautiful free template](https://github.com/BlackrockDigital/startbootstrap-clean-blog).
