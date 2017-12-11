@@ -7,11 +7,10 @@ class PostPreview extends Component {
 
     render() {
         const {id, title, body, author, category, timestamp, voteScore, commentCount} = this.props.post;
-
         return (
             <div>
                 <div className="post-preview">
-                    <NavLink to={`/posts/${id}`}>
+                    <NavLink to={`/${category}/${id}`}>
                         <h2 className="post-title">
                             {title}
                         </h2>

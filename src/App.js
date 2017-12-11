@@ -27,7 +27,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/:category" component={Category}/>
-                    <Route exact path="/posts/:postId" component={Post}/>
+                    <Route exact path="/:category/:postId" component={Post}/>
                 </Switch>
                 <PostAddModal/>
                 <PostEditModal/>
