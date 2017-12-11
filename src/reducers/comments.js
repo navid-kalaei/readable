@@ -1,4 +1,4 @@
-import {ADD_COMMENT, DELETE_COMMENT, DELETE_COMMENTS, FETCH_COMMENTS, UPDATE_COMMENT} from "../actions/comments";
+import {ADD_COMMENT, DELETE_COMMENT, DELETE_COMMENTS, FETCH_COMMENTS, UPDATE_COMMENT} from '../actions/actionTypes';
 
 const initialState = {};
 

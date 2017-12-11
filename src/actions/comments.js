@@ -1,11 +1,6 @@
 import * as api from '../utils/api';
 
-export const FETCH_COMMENTS = 'FETCH_COMMENTS';
-export const FETCH_COMMENT = 'FETCH_COMMENT';
-export const UPDATE_COMMENT = 'UPDATE_COMMENT';
-export const ADD_COMMENT = 'ADD_COMMENT';
-export const DELETE_COMMENT = 'DELETE_COMMENT';
-export const DELETE_COMMENTS = 'DELETE_COMMENTS';
+import {FETCH_COMMENTS, FETCH_COMMENT, UPDATE_COMMENT, ADD_COMMENT, DELETE_COMMENT, DELETE_COMMENTS} from './actionTypes';
 
 export const fetchComments = (postId = null) => (dispatch) => (
     api.fetchComments(postId).then((comments) => (

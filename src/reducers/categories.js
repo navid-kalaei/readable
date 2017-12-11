@@ -1,4 +1,4 @@
-import { FETCH_CATEGORIES } from "../actions/categories";
+import { FETCH_CATEGORIES } from '../actions/actionTypes';
 
 
 const initialState = [];

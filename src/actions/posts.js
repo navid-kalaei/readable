@@ -1,12 +1,6 @@
 import * as api from '../utils/api';
 
-export const FETCH_POSTS = 'FETCH_POSTS';
-export const FETCH_POST = 'FETCH_POST';
-export const ADD_POST = 'ADD_POST';
-export const UPDATE_POST = 'UPDATE_POST';
-export const DELETE_POST = 'DELETE_POST';
-export const SORT_BY_VOTE = 'SORT_BY_VOTE';
-export const SORT_BY_DATE = 'SORT_BY_DATE';
+import {FETCH_POSTS, FETCH_POST, ADD_POST, UPDATE_POST, DELETE_POST, SORT_BY_VOTE, SORT_BY_DATE} from './actionTypes';
 
 
 export const fetchPosts = (category = null) => (dispatch) => (

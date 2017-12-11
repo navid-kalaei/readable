@@ -1,5 +1,5 @@
 import sortBy from 'sort-by';
-import {ADD_POST, DELETE_POST, FETCH_POSTS, SORT_BY_DATE, SORT_BY_VOTE, UPDATE_POST, FETCH_POST} from "../actions/posts";
+import {ADD_POST, DELETE_POST, FETCH_POSTS, SORT_BY_DATE, SORT_BY_VOTE, UPDATE_POST, FETCH_POST} from '../actions/actionTypes';
 
 
 const initialState = [];

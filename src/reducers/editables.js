@@ -1,4 +1,4 @@
-import {DISMISS_EDITABLE_COMMENT, DISMISS_EDITABLE_POST, FETCH_COMMENT, FETCH_POST} from '../actions/editables';
+import {DISMISS_EDITABLE_COMMENT, DISMISS_EDITABLE_POST, FETCH_COMMENT, FETCH_POST} from '../actions/actionTypes';
 
 
 const initialState = {

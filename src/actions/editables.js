@@ -1,10 +1,7 @@
 import * as api from '../utils/api';
 
 
-export const FETCH_COMMENT ='FETCH_COMMENT';
-export const DISMISS_EDITABLE_COMMENT = 'DISMISS_EDITABLE_COMMENT';
-export const FETCH_POST = 'FETCH_POST';
-export const DISMISS_EDITABLE_POST = 'DISMISS_EDITABLE_POST';
+import {FETCH_COMMENT, DISMISS_EDITABLE_COMMENT, FETCH_POST, DISMISS_EDITABLE_POST} from './actionTypes';
 
 export const fetchComment = (id) => (dispatch) => (
     api.fetchComment(id).then((comment) => (
