@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {fetchPosts} from '../actions/posts';
+import {fetchPost} from '../actions/posts';
 import {fetchComments} from "../actions/comments";
 import Header from './Header';
 import PostFooter from './PostFooter';
 import Comment from './Comment';
 import CommentForm from './CommentForm';
 
+
 class Post extends Component {
 
     componentDidMount() {
         if(!this.props.id){
-            this.props.fetchPosts();
+            this.props.fetchPost(this.props.match.params.postId);
         }
         else {
             this.props.fetchComments(this.props.id)
@@ -77,7 +78,7 @@ const mapStateToProps = ({posts, comments}, ownProps) => {
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators(
         {
-            fetchPosts,
+            fetchPost,
             fetchComments
         },
         dispatch
