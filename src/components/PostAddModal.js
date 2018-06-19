@@ -74,7 +74,7 @@ class PostAdd extends Component {
                                             name="body"
                                             className="form-control"
                                             id="commentInput"
-                                            placeholder="Comment"
+                                            placeholder="Post"
                                             required
                                             onChange={this.onChange('body')}
                                             value={body}
